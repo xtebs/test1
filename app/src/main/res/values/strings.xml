@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">test1</string>
+
+    <string name="test1">test1</string>
+    <string name="hello_world">Lets Test Git Hub!everyone change some code</string>
+    <string name="action_settings">Settings</string>
+</resources>
