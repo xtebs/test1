@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -11,7 +12,24 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         setContentView(R.layout.activity_main);
+
+        String event_text_exemple = "texto bla bla bla bla bla bla bla bla bla bla bla bla";
+
+        int image_ref =R.drawable.christmasball50;
+
+
+        GridView gridview = (GridView) findViewById(R.id.event_grid_xml);
+        gridview.setAdapter(new event_item(this, event_text_exemple,image_ref));
+
+
+
+
+
     }
 
     @Override
