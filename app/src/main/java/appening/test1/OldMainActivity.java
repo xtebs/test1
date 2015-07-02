@@ -1,21 +1,32 @@
 package appening.test1;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.GridView;
 
 
-public class MainActivity extends ActionBarActivity
+public class OldMainActivity extends ActionBarActivity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+
+        setContentView(R.layout.activity_main_old);
+
+        String event_text_exemple = "texto bla bla bla bla bla bla bla bla bla bla bla bla";
+
+        int image_ref = R.drawable.christmasball50;
+
+
+        GridView gridview = (GridView) findViewById(R.id.event_grid_xml);
+        gridview.setAdapter(new event_item(this, event_text_exemple, image_ref));
+
+
     }
 
     @Override
@@ -41,28 +52,5 @@ public class MainActivity extends ActionBarActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    //quick and dirty way to select stuff we wrote:
-    public void startActivity(View view)
-    {
-
-        Intent intent;
-
-        if (view == findViewById(R.id.contentButton1))
-        {
-            //esteves' grid layout
-            intent = new Intent(this, OldMainActivity.class);
-        } else if (view == findViewById(R.id.contentButton2))
-        {
-            //simoes' infinite scroll
-            intent = new Intent(this, InfiniteScrollActivity.class);
-        } else
-        {
-            //add new stuff here
-            intent = null;
-        }
-
-        startActivity(intent);
     }
 }

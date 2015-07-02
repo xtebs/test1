@@ -4,4 +4,6 @@
     <string name="test1">test1</string>
     <string name="hello_world">Lets Test Git Hub!everyone change some code</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_infinite_scroll_listener">InfiniteScrollListener</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
