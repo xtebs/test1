@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InfiniteScrollActivity"
+            android:name=".infiniscroll.InfiniteScrollActivity"
             android:label="@string/title_activity_infinite_scroll_listener"
             android:parentActivityName=".OldMainActivity">
             <meta-data

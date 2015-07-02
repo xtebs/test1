@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import appening.test1.infiniscroll.InfiniteScrollActivity;
+
 
 public class MainActivity extends ActionBarActivity
 {

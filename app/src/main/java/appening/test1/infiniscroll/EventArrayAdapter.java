@@ -1,4 +1,4 @@
-package appening.test1;
+package appening.test1.infiniscroll;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,26 +10,24 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import appening.test1.R;
+
 /**
  * Created by Ze on 02/07/2015.
  */
 public class EventArrayAdapter extends ArrayAdapter<EventHeaderInfo>
 {
-    private final Context context;
-    private final EventHeaderInfo[] values;
+    public static final int VIEW_TYPE_LOADING = 0;
+    public static final int VIEW_TYPE_ACTIVITY = 1;
 
-    public EventArrayAdapter(Context context, EventHeaderInfo[] values)
-    {
-        super(context, -1, values);
-        this.context = context;
-        this.values = values;
-    }
+    private final Context context;
+    private final List<EventHeaderInfo> values;
 
     public EventArrayAdapter(Context context, List<EventHeaderInfo> values)
     {
         super(context, -1, values);
         this.context = context;
-        this.values = values.toArray(new EventHeaderInfo[values.size()]);
+        this.values = values;
     }
 
     @Override
@@ -43,9 +41,17 @@ public class EventArrayAdapter extends ArrayAdapter<EventHeaderInfo>
         TextView title = (TextView) rowView.findViewById(R.id.titleText);
         TextView descr = (TextView) rowView.findViewById(R.id.descriptionText);
 
-        title.setText(values[position].getTitle());
-        descr.setText(values[position].getDescription());
-        img.setImageDrawable(values[position].getImage());
+        //this is a test
+        if (position % 3 == 0)
+        {
+            descr.setText(values.get(position).getDescription());
+        } else
+        {
+            descr.setText(values.get(position).getDescription().substring(0, 40) + "...");
+        }
+
+        title.setText(values.get(position).getTitle());
+        img.setImageDrawable(values.get(position).getImage());
 
         // change the icon for Windows and iPhone
 

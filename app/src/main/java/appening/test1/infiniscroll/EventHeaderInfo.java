@@ -1,4 +1,4 @@
-package appening.test1;
+package appening.test1.infiniscroll;
 
 import android.graphics.drawable.Drawable;
 
