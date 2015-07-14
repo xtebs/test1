@@ -55,15 +55,21 @@ public class MainActivity extends ActionBarActivity
         {
             //esteves' grid layout
             intent = new Intent(this, OldMainActivity.class);
-        } else if (view == findViewById(R.id.contentButton2))
+        }
+
+        else if (view == findViewById(R.id.contentButton2))
         {
             //simoes' infinite scroll
             intent = new Intent(this, InfiniteScrollActivity.class);
-        } else
+        }
+
+       else if (view == findViewById(R.id.contentButton3))
         {
             //add new stuff here
-            intent = null;
+            intent = new Intent(this,SwipeView_MainActv.class);
         }
+        else
+        intent =null;
 
         startActivity(intent);
     }

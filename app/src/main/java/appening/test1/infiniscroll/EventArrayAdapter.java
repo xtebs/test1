@@ -1,6 +1,8 @@
 package appening.test1.infiniscroll;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.shapes.Shape;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,7 @@ public class EventArrayAdapter extends ArrayAdapter<EventHeaderInfo>
         ImageView img = (ImageView) rowView.findViewById(R.id.imageView);
         TextView title = (TextView) rowView.findViewById(R.id.titleText);
         TextView descr = (TextView) rowView.findViewById(R.id.descriptionText);
+       // Drawable squar = (Drawable) rowView.findViewById(R.id.square_background);
 
         //this is a test
         if (position % 3 == 0)

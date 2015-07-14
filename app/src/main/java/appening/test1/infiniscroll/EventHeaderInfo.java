@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 public class EventHeaderInfo
 {
 
-    public EventHeaderInfo(Drawable image, String title, String description)
+    public EventHeaderInfo(Drawable image , String title, String description)
     {
         this.image = image;
         this.title = title;
@@ -45,8 +45,10 @@ public class EventHeaderInfo
         this.description = description;
     }
 
+
     public Drawable image;
     public String title;
     public String description;
+
 
 }

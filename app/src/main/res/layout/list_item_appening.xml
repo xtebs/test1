@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:orientation="vertical"
               android:padding="5dp"
-              android:background="#ffe0e0e0">
+              android:background="#ffffffff">
+
+
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
         android:id="@+id/imageView"
-        android:layout_margin="8dp"
-        android:maxHeight="5dp"
-        android:maxWidth="5dp"
-        android:src="@drawable/hairy"/>
+        android:layout_margin="1dp"
+        android:maxHeight="1dp"
+        android:maxWidth="1dp"
+        android:src="@drawable/hairy"
+        />
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Title"
         android:id="@+id/titleText"
-        android:background="#ffb9b9b9"
-        android:layout_margin="3dp"
+        android:background="#80b9b9b9"
         android:singleLine="false"
         android:gravity="left"
-        />
+
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_alignBottom="@+id/imageView"
+  />
 
     <TextView
         android:layout_width="match_parent"
@@ -35,6 +41,12 @@
         android:id="@+id/descriptionText"
         android:background="#ffb9b9b9"
         android:layout_margin="3dp"
+
+
+
+        android:layout_below="@+id/imageView"
+
         />
 
-</LinearLayout>
+
+</RelativeLayout>
