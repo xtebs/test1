@@ -2,8 +2,10 @@ package appening.test1.SwipeView_Fragments;
 
 import android.content.Context;
 import android.hardware.Camera;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.hardware.camera2.*;
 
 import java.io.IOException;
 
@@ -24,17 +26,53 @@ class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
         mHolder.addCallback(this);
         // deprecated setting, but required on Android versions prior to 3.0
         mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        boolean autoFocusOk;
+
     }
 
     public void surfaceCreated(SurfaceHolder holder) {
         // The Surface has been created, now tell the camera where to draw the preview.
         try {
+            mCamera.setDisplayOrientation(90);
+            //Camera.Parameters params
+            //mcamera.setDisplayOrientation(90);
+
             mCamera.setPreviewDisplay(holder);
+
+
+
+
+
+           //set camera to continually auto-focus
+            Camera.Parameters params = mCamera.getParameters();
+            //It is better to use defined constraints as opposed to String
+            params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+            mCamera.setParameters(params);
+            mCamera.autoFocus(cb);
             mCamera.startPreview();
+            Log.d("Camera: ", "surfaceCreated ");
+            mCamera.autoFocus(cb);
+
+
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
+
+    Camera.AutoFocusCallback cb = new Camera.AutoFocusCallback(){
+        public void onAutoFocus(boolean success, Camera camera) {
+            // TODO Auto-generated method stub
+            //return true;
+            Log.d("Camera Focus: ", "focused! ");
+        }
+
+    };
+
 
     public void surfaceDestroyed(SurfaceHolder holder) {
         // empty. Take care of releasing the Camera preview in your activity.
@@ -62,7 +100,17 @@ class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
         // start preview with new settings
         try {
             mCamera.setPreviewDisplay(mHolder);
+            //mCamera.startPreview();
+
+            Camera.Parameters params = mCamera.getParameters();
+            //It is better to use defined constraints as opposed to String
+            params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+            mCamera.setParameters(params);
             mCamera.startPreview();
+            Log.d("Camera: ", "surfaceChanged ");
+            mCamera.autoFocus(cb);
+
+
 
         } catch (Exception e){
             e.printStackTrace();
