@@ -18,7 +18,7 @@ public class OldMainActivity extends ActionBarActivity
 
         String event_text_example = "texto bla bla bla bla bla bla bla bla bla bla bla bla";
 
-        int image_ref = R.drawable.christmasball50;
+        int image_ref = R.drawable.camicon100;
 
 
         GridView gridview = (GridView) findViewById(R.id.event_grid_xml);
