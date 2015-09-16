@@ -48,6 +48,7 @@ class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
             //It is better to use defined constraints as opposed to String
             params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
             mCamera.setParameters(params);
+            //mCamera.
             mCamera.autoFocus(cb);
             mCamera.startPreview();
             Log.d("Camera: ", "surfaceCreated ");

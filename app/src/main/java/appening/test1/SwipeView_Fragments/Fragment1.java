@@ -23,11 +23,27 @@ public class Fragment1 extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        View gallery = inflater.inflate(R.layout.fragment1,container,false);
 
-        return inflater.inflate(R.layout.fragment1,container,false);
+        //setContentView(R.layout.activity_main_old);
+
+
+
+        String event_text_example = "text";// not used right now
+
+        int image_ref = R.drawable.camicon100; // not used right now
+
+
+        GridView gridview = (GridView) gallery.findViewById(R.id.event_grid_xml);
+        gridview.setAdapter(new event_item(getActivity(), event_text_example, image_ref));
+
+        return gallery;
+    }
+
+
 
     }
 
 
 
-}
+

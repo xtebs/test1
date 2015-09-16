@@ -22,7 +22,7 @@ public class event_item extends BaseAdapter{
 
         this.context = context;
         this.event_text_exemple=event_text_exemple;
-        this.image_ref = image_ref;
+        //this.image_ref = image_ref;
 
     }
 
@@ -31,7 +31,7 @@ public class event_item extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return 10;
+        return 60;
     }
 
 
@@ -63,31 +63,6 @@ convertView = inflater.inflate(R.layout.event_item,parent,false);
 return convertView;
     }
 
-    /*
-
-     LayoutInflater inflater = (LayoutInflater)parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-            convertView = inflater.inflate(R.layout.each_event_on_list, parent,false);
-
-
-            TextView title = (TextView)convertView.findViewById(R.id.title);
-            TextView value = (TextView)convertView.findViewById(R.id.value);
-            TextView date = (TextView)convertView.findViewById(R.id.date);
-
-            ImageView eventpic = (ImageView)convertView.findViewById(R.id.eventimage);
-
-            title.setText( lista_title.get(position).toString());
-            value.setText(lista_text.get(position).toString());
-            date.setText(lista_date.get(position).toString());
-            eventpic.setImageResource(lista_image.get(position));
-
-
-     */
-
-
-        /* LayoutInflater inflater =
-    convertView = inflater.inflate(R.layout.event_item, parent,false);
-*/
 
 
 }
