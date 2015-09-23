@@ -51,11 +51,11 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.ListAdapter;
 
-import com.example.ludimar.mygridviewdemo.R;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+
+import appening.test1.R;
 
 
 /**

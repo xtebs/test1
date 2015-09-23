@@ -1,4 +1,4 @@
-package com.example.ludimar.mygridviewdemo.views;
+package appening.test1.gridview.views;
 
 import android.content.Context;
 import android.graphics.Bitmap;

@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 
 import appening.test1.gridview.loader.ImageLoader;
 import appening.test1.gridview.views.ScaleImageView;
-import android.R;
 
 public class StaggeredAdapter extends ArrayAdapter<String> {
 
