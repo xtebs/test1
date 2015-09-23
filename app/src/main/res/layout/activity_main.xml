@@ -51,6 +51,14 @@
             android:id="@+id/contentButton3"
             android:layout_gravity="center_horizontal"
             android:onClick="startActivity"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_button_text"
+            android:id="@+id/contentButton4"
+            android:layout_gravity="center_horizontal"
+            android:onClick="startActivity"/>
     </LinearLayout>
 
 </RelativeLayout>
