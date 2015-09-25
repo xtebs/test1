@@ -68,10 +68,14 @@ public class MainActivity extends ActionBarActivity
             //add new stuff here
             intent = new Intent(this,SwipeView_MainActv.class);
         }
+        else if (view == findViewById(R.id.contentButton4))
+        {
+            //add new stuff here
+            intent = new Intent(this,StaggViewMainActivity.class);
+        }
         else
         intent =null;
 
         startActivity(intent);
     }
-    //TODO teste
 }
