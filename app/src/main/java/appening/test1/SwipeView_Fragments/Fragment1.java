@@ -3,6 +3,7 @@ package appening.test1.SwipeView_Fragments;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.GridView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import appening.test1.GalleryPictureSlideAdapter;
 import appening.test1.R;
 
 import appening.test1.event_item;
@@ -32,6 +34,7 @@ public class Fragment1 extends android.support.v4.app.Fragment {
         String event_text_example = "text";// not used right now
 
         int image_ref = R.drawable.camicon100; // not used right now
+
 
 
         GridView gridview = (GridView) gallery.findViewById(R.id.event_grid_xml);
