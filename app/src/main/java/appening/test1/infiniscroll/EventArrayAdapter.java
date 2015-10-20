@@ -2,7 +2,6 @@ package appening.test1.infiniscroll;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.shapes.Shape;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,46 +16,45 @@ import appening.test1.R;
 /**
  * Created by Ze on 02/07/2015.
  */
-public class EventArrayAdapter extends ArrayAdapter<EventHeaderInfo>
+public class EventArrayAdapter extends ArrayAdapter<EventInfo>
 {
-    public static final int VIEW_TYPE_LOADING = 0;
-    public static final int VIEW_TYPE_ACTIVITY = 1;
+    protected final Context context;
+    protected final List<EventInfo> values;
 
-    private final Context context;
-    private final List<EventHeaderInfo> values;
-
-    public EventArrayAdapter(Context context, List<EventHeaderInfo> values)
+    public EventArrayAdapter(Context context, List<EventInfo> values)
     {
         super(context, -1, values);
         this.context = context;
         this.values = values;
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent)
+    public View getView(ViewGroup parent)
     {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.list_item_appening, parent, false);
+        return inflater.inflate(R.layout.list_item_appening, parent, false);
+    }
 
+    public void setContent(View rowView, String title, String descr, Drawable drawable)
+    {
         ImageView img = (ImageView) rowView.findViewById(R.id.imageView);
-        TextView title = (TextView) rowView.findViewById(R.id.titleText);
-        TextView descr = (TextView) rowView.findViewById(R.id.descriptionText);
-       // Drawable squar = (Drawable) rowView.findViewById(R.id.square_background);
+        TextView titleView = (TextView) rowView.findViewById(R.id.titleText);
+        TextView descrView = (TextView) rowView.findViewById(R.id.descriptionText);
 
-        //this is a test
-        if (position % 3 == 0)
-        {
-            descr.setText(values.get(position).getDescription());
-        } else
-        {
-            descr.setText(values.get(position).getDescription().substring(0, 40) + "...");
-        }
+        descrView.setText(descr);
+        titleView.setText(title);
+        img.setImageDrawable(drawable);
+    }
 
-        title.setText(values.get(position).getTitle());
-        img.setImageDrawable(values.get(position).getImage());
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
+        String title = values.get(position).getTitle();
+        String descr = (position % 3 == 0) ? values.get(position).getDescription() : values.get(position).getDescription().substring(0, 40) + "...";
+        Drawable draw = values.get(position).getImage();
 
-        // change the icon for Windows and iPhone
+        View rowView = getView(parent);
+        setContent(rowView, title, descr, draw);
 
         return rowView;
     }

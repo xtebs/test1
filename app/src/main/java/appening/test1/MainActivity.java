@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import appening.test1.eventscreen.EventScreen;
 import appening.test1.infiniscroll.InfiniteScrollActivity;
 
 
@@ -55,26 +56,24 @@ public class MainActivity extends ActionBarActivity
         {
             //esteves' grid layout
             intent = new Intent(this, OldMainActivity.class);
-        }
-
-        else if (view == findViewById(R.id.contentButton2))
+        } else if (view == findViewById(R.id.contentButton2))
         {
             //simoes' infinite scroll
             intent = new Intent(this, InfiniteScrollActivity.class);
-        }
-
-       else if (view == findViewById(R.id.contentButton3))
+        } else if (view == findViewById(R.id.contentButton3))
         {
             //add new stuff here
-            intent = new Intent(this,SwipeView_MainActv.class);
-        }
-        else if (view == findViewById(R.id.contentButton4))
+            intent = new Intent(this, SwipeView_MainActv.class);
+        } else if (view == findViewById(R.id.contentButton4))
         {
             //add new stuff here
-            intent = new Intent(this,StaggViewMainActivity.class);
-        }
-        else
-        intent =null;
+            intent = new Intent(this, StaggViewMainActivity.class);
+        } else if (view == findViewById(R.id.contentButton5))
+        {
+            //add new stuff here
+            intent = new Intent(this, EventScreen.class);
+        } else
+            intent = null;
 
         startActivity(intent);
     }

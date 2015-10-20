@@ -1,52 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:padding="5dp"
-              android:background="#ffffffff">
+<appening.test1.util.SquareRelativeLayout
+    android:id="@+id/list_item_root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:padding="5dp">
 
-
+    <ProgressBar
+        android:id="@+id/imageLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        />
 
     <ImageView
-        android:layout_width="260dp"
-        android:layout_height="260dp"
         android:id="@+id/imageView"
-        android:layout_margin="1dp"
-        android:maxHeight="1dp"
-        android:maxWidth="1dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitCenter"
         android:src="@drawable/hairy"
         />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="90dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Title"
-        android:id="@+id/titleText"
-        android:background="#80b9b9b9"
-        android:singleLine="false"
-        android:gravity="left"
-
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_alignBottom="@+id/imageView"
-  />
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Description"
-        android:id="@+id/descriptionText"
-        android:background="#ffb9b9b9"
-        android:layout_margin="3dp"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/imageView"
+        android:layout_alignLeft="@id/imageView"
+        android:layout_alignRight="@id/imageView"
+        android:layout_alignTop="@id/imageView"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"/>
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="2"
+            android:background="#90222222"
+            android:gravity="left"
+            android:singleLine="true"
+            android:text="Title"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/white"/>
+
+        <!-- duvida: use larger font for readability? -->
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="#90222222"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:singleLine="false"
+            android:text="Description: Lorem ipsum dolor sit amet."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
 
 
-
-        android:layout_below="@+id/imageView"
-
-        />
-
-
-</RelativeLayout>
+</appening.test1.util.SquareRelativeLayout>

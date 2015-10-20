@@ -25,19 +25,24 @@
         <activity
             android:name=".infiniscroll.InfiniteScrollActivity"
             android:label="@string/title_activity_infinite_scroll_listener"
-            android:parentActivityName=".OldMainActivity">
+            android:parentActivityName=".OldMainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="MainActivity"/>
+                android:value="MainActivity" />
         </activity>
         <activity
             android:name=".OldMainActivity"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main" >
         </activity>
-
+        <activity android:name=".SwipeView_MainActv" >
+        </activity>
         <activity
-            android:name=".SwipeView_MainActv"
-           >
+            android:name=".eventscreen.EventScreen"
+            android:label="@string/title_activity_event_screen"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="appening.test1.MainActivity" />
         </activity>
         <activity android:name=".StaggViewMainActivity"/>
     </application>

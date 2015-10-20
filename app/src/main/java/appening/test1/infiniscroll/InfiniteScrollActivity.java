@@ -1,8 +1,6 @@
 package appening.test1.infiniscroll;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -39,18 +37,18 @@ public class InfiniteScrollActivity extends ActionBarActivity
 
         int pageSize = 5;
         //this loader is passed to the ScrollListener and is used to load the initial data. Refactor later.
-        final DataLoader dataLoader = new DataLoader<EventHeaderInfo>(pageSize);
+        final DataLoader dataLoader = new DataLoader<EventInfo>(pageSize);
         dataLoader.setData(getPresetData(pageSize));
 
         //load page 0
-        final List<EventHeaderInfo> adapterData = dataLoader.loadPage(0);
+        final List<EventInfo> adapterData = dataLoader.loadPage(0);
         final EventArrayAdapter adapter = new EventArrayAdapter(this, adapterData);
         gridView.setAdapter(adapter);
 
         InfiniteScrollListener listener =
                 new InfiniteScrollListener()
                 {
-                    DataLoader<EventHeaderInfo> loader = dataLoader;
+                    DataLoader<EventInfo> loader = dataLoader;
 
                     @Override
                     public void loadMore(int page, int totalItemsCount)
@@ -62,7 +60,7 @@ public class InfiniteScrollActivity extends ActionBarActivity
                         // Triggered only when new data needs to be appended to the list
                         // Add whatever code is needed to append new items to your AdapterView
 
-                        List<EventHeaderInfo> newData = loader.loadPage(page);
+                        List<EventInfo> newData = loader.loadPage(page);
                         adapterData.addAll(newData);
                         adapter.notifyDataSetChanged();
                     }
@@ -84,9 +82,9 @@ public class InfiniteScrollActivity extends ActionBarActivity
         });
     }
 
-    protected List<List<EventHeaderInfo>> getPresetData(int pageSize)
+    protected List<List<EventInfo>> getPresetData(int pageSize)
     {
-        List<List<EventHeaderInfo>> presetData = new ArrayList<List<EventHeaderInfo>>();
+        List<List<EventInfo>> presetData = new ArrayList<List<EventInfo>>();
 
         String[] content = new String[]{"Android", "iPhone", "WindowsMobile",
                 "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
@@ -95,7 +93,7 @@ public class InfiniteScrollActivity extends ActionBarActivity
                 "Android", "iPhone", "WindowsMobile", "Banana", "Apple",
                 "Potato", "Grapes", "Dogs", "Cats", "Boogie", "Drop", "Shuffle"};
 
-        List<EventHeaderInfo> page = null;
+        List<EventInfo> page = null;
         for (int i = 0; i < content.length; i++)
         {
             //add the last page and create a new one if we reached <dataPageSize> items
@@ -109,7 +107,7 @@ public class InfiniteScrollActivity extends ActionBarActivity
                 page = new ArrayList<>();
             }
 
-            EventHeaderInfo e = new EventHeaderInfo(
+            EventInfo e = new EventInfo(
                     getResources().getDrawable(R.drawable.hairy),
                     "Title " + i + ":" + content[i],
                     "Descr: " + "This is a Hairy Guy! I needed to test a long string for a " +
